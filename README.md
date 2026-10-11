@@ -122,5 +122,3 @@ Game balance constants (round length, player limits, immunity time, ports) are d
 - The UI is laid out in code with absolute frames, designed with the ~320 pt wide iPhone screens of the iOS 6 era in mind; other screen sizes and orientations are untested.
 
 ## License
-
-Add your license of choice here (for example MIT).
