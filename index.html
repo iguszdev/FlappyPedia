@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -37,80 +37,80 @@ footer{border-top:1px solid var(--line);color:var(--mut);font-size:12px;padding:
 </style>
 </head>
 <body>
-<div class="top">Flappy Potato<small>Oficjalny Portal Gry</small></div>
+<div class="top">Flappy Potato<small>Official Game Portal</small></div>
 <main>
 <h1>Flappy Potato</h1>
-<div class="sub">Baza wiedzy i instrukcje instalacji</div>
+<div class="sub">Knowledge Base & Installation Instructions</div>
 
 <table class="info">
 <caption>Flappy Potato (Halloween Edition 🎃)</caption>
 <tr><td colspan="2" class="emo">🥔👻</td></tr>
-<tr><th>Gatunek</th><td>zręcznościowa, endless runner</td></tr>
-<tr><th>Wersja</th><td>1.4 - Spooky & Local Host Update</td></tr>
-<tr><th>Platformy</th><td>iOS 6</td></tr>
-<tr><th>Język programowania</th><td>Objective-C / Node.js</td></tr>
-<tr><th>Sterowanie</th><td>dotyk / głos (mikrofon) 🗣️</td></tr>
+<tr><th>Genre</th><td>Arcade, endless runner</td></tr>
+<tr><th>Version</th><td>1.4 - Spooky & Local Host Update</td></tr>
+<tr><th>Platforms</th><td>iOS 6</td></tr>
+<tr><th>Programming Language</th><td>Objective-C / Node.js</td></tr>
+<tr><th>Controls</th><td>Touch / Voice (microphone) 🗣️</td></tr>
 </table>
 
-<p><b>Flappy Potato</b> – polska gra zręcznościowa inspirowana <i>Flappy Bird</i>, w której gracz steruje ziemniakiem przelatującym między przeszkodami. Gra powstała w klasycznej formie na system iOS 6. Obecnie trwa mroczny <b>Halloween Update</b>, a w nowej wersji dodano wsparcie dla rozgrywki wieloosobowej z opcją uruchomienia własnego serwera na local hoscie!</p>
+<p><b>Flappy Potato</b> is an arcade game inspired by <i>Flappy Bird</i>, where the player controls a potato flying between obstacles. The game was built in its classic form for iOS 6. The dark <b>Halloween Update</b> is currently active, adding multiplayer support with an option to run your own local host server in the new version!</p>
 
-<div class="toc"><b>Spis treści</b>
+<div class="toc"><b>Table of Contents</b>
 <ol>
-<li><a href="#roz">Rozgrywka</a></li>
-<li><a href="#halloween">Halloween Update 🎃 - Co nowego?</a></li>
-<li><a href="#ios">Instalacja (GitHub: FZ1,4.ipa & server.js)</a></li>
-<li><a href="#tech">Aspekty techniczne</a></li>
+<li><a href="#roz">Gameplay</a></li>
+<li><a href="#halloween">Halloween Update 🎃 - What's New?</a></li>
+<li><a href="#ios">Installation (GitHub: FZ1,4.ipa & server.js)</a></li>
+<li><a href="#tech">Technical Aspects</a></li>
 </ol></div>
 
-<h2 id="roz">Rozgrywka</h2>
-<p>Gracz dotyka ekranu (lub używa głosu!), aby nadać ziemniakowi pęd w górę; w pozostałym czasie postać opada pod wpływem grawitacji. Celem jest przelecenie przez szczeliny między parami przeszkód bez zderzenia z nimi, z podłożem lub z krawędzią ekranu. Za każdą miniętą przeszkodę gracz otrzymuje jeden punkt. Zderzenie kończy rozgrywkę.</p>
+<h2 id="roz">Gameplay</h2>
+<p>The player taps the screen (or uses their voice!) to give the potato upward momentum; otherwise, the character falls due to gravity. The goal is to fly through the gaps between pairs of obstacles without colliding with them, the ground, or the edge of the screen. For each obstacle passed, the player receives one point. A collision ends the game.</p>
 
-<h2 id="halloween">Halloween Update 🎃 - Co nowego?</h2>
+<h2 id="halloween">Halloween Update 🎃 - What's New?</h2>
 <div class="halloween-note">
-<b>Trwa wydarzenie Halloweenowe!</b> Zmiany w rozgrywce obowiązują przez cały październik.
+<b>Halloween event is live!</b> Gameplay changes apply throughout October.
 </div>
-<p>Z okazji święta duchów, gra otrzymała mroczną i klimatyczną aktualizację wprowadzającą mnóstwo nowych funkcji:</p>
+<p>For the spirit of Halloween, the game received a dark and atmospheric update introducing plenty of new features:</p>
 <ul>
-<li><b>Krzycz, aby latać (Sterowanie Głosowe) 🗣️:</b> Dodano zupełnie nowy, innowacyjny tryb gry! Używając przycisku w menu, możesz przełączyć sterowanie z dotykowego na głosowe. Krzycz do mikrofonu, aby ziemniak podskoczył – im głośniejszy dźwięk, tym wyżej poleci!</li>
-<li><b>Cukierki i Sklep z Postaciami 🍬:</b> Podczas lotu losowo pojawiają się cukierki. Zbieraj je, aby zgromadzić walutę! Za 15 cukierków możesz wylosować w sklepie nowy wygląd swojego ziemniaka.</li>
-<li><b>Mroczne Skiny:</b> Zastąp klasyczną, bazową dynię i odblokuj skina <b>Ducha (👻)</b> lub <b>Zombie (🧟)</b> z charakterystyczną blizną.</li>
-<li><b>Upiorne Efekty Wizualne:</b> Ziemniak podczas lotu zostawia teraz za sobą zanikającą, mroczną smugę (trail effect). Pogodne niebo zastąpiono fioletowo-granatowym mrokiem, a zamiast zwykłych chmurek po niebie przelatują nietoperze, duchy i pajęczyny (🦇, 👻, 🕸️).</li>
-<li><b>Nowe Przeszkody:</b> Rury zyskały mroczną, szaro-pomarańczową kolorystykę pasującą do klimatu.</li>
+<li><b>Scream to Fly (Voice Control) 🗣️:</b> A brand new, innovative game mode has been added! Using the button in the menu, you can switch controls from touch to voice. Scream into the microphone to make the potato jump – the louder the sound, the higher it flies!</li>
+<li><b>Candies and Character Shop 🍬:</b> Candies randomly appear during flight. Collect them to accumulate currency! For 15 candies, you can randomly unlock a new look for your potato in the shop.</li>
+<li><b>Dark Skins:</b> Replace the classic base pumpkin and unlock the <b>Ghost (👻)</b> or <b>Zombie (🧟)</b> skin with a characteristic scar.</li>
+<li><b>Spooky Visual Effects:</b> The potato now leaves a fading, dark trail effect behind it during flight. The clear sky has been replaced with purple-navy gloom, and instead of ordinary clouds, bats, ghosts, and spiderwebs fly across the sky (🦇, 👻, 🕸️).</li>
+<li><b>New Obstacles:</b> Pipes have gained a dark, gray-orange color scheme fitting the atmosphere.</li>
 </ul>
 
-<h2 id="ios">Instalacja z GitHub (PC / Linux / Mac)</h2>
+<h2 id="ios">Installation from GitHub (PC / Linux / Mac)</h2>
 <div class="note" style="border-left-color: #f44336;">
-<b>⚠️ Ważne:</b> Aplikację można zainstalować <b>przy użyciu komputera z Linux, Windows, macOS</b>. Nie ma możliwości pobrania i instalacji pliku wprost z przeglądarki na urządzeniu z systemem iOS!
+<b>⚠️ Important:</b> The application can be installed <b>using a Linux, Windows, or macOS computer</b>. It is not possible to download and install the file directly from a browser on an iOS device!
 </div>
 
-<p>Wszystkie pliki projektu – w tym najnowsza aplikacja kliencka <b><code>FZ1,4.ipa</code></b> oraz skrypt serwera <b><code>server.js</code></b> – znajdują się w naszym oficjalnym repozytorium na <b>GitHubie</b>.</p>
+<p>All project files – including the latest client app <b><code>FZ1,4.ipa</code></b> and the server script <b><code>server.js</code></b> – are located in our official <b>GitHub</b> repository.</p>
 
-<p><b>1. Instalacja gry na iOS 6:</b></p>
+<p><b>1. Installing the game on iOS 6:</b></p>
 <ol>
-<li>Pobierz plik <a href="https://github.com/iguszdev/ALLFLAPPYZIEMNIAKS/releases/tag/FZ1%2C4" style="font-weight: bold;" target="_blank">FZ1,4.ipa</a> z repozytorium GitHub na dysk swojego komputera.</li>
-<li>Pobierz i zainstaluj na komputerze program do sideloadingu (np. <b>Sideloadly</b> lub Apple Configurator dla macOS).</li>
-<li>Podłącz swojego iPhone'a / iPada / iPoda z systemem iOS 6 do komputera za pomocą kabla USB i przeciągnij plik <code>FZ1,4.ipa</code> do programu, a następnie kliknij "Start" / "Install". <i>(Uwaga: Wymagany Jailbreak i wtyczka <b>AppSync</b> w przypadku starszych systemów).</i></li>
+<li>Download the <a href="https://github.com/iguszdev/ALLFLAPPYZIEMNIAKS/releases/tag/FZ1%2C4" style="font-weight: bold;" target="_blank">FZ1,4.ipa</a> file from the GitHub repository to your computer's disk.</li>
+<li>Download and install a sideloading program on your computer (e.g., <b>Sideloadly</b> or Apple Configurator for macOS).</li>
+<li>Connect your iOS 6 iPhone / iPad / iPod to the computer using a USB cable, drag the <code>FZ1,4.ipa</code> file into the program, and click "Start" / "Install". <i>(Note: Jailbreak and the <b>AppSync</b> tweak are required for older systems).</i></li>
 </ol>
 
-<p><b>2. Uruchomienie własnego serwera (Local Host / Berek):</b></p>
+<p><b>2. Running your own server (Local Host / Berek):</b></p>
 <ol>
-<li>Pobierz plik <b><code>server.js</code></b> z repozytorium GitHub.</li>
-<li>Upewnij się, że masz zainstalowane środowisko <b>Node.js</b> na komputerze.</li>
-<li>Uruchom serwer w terminalu za pomocą polecenia:
+<li>Download the <b><code>server.js</code></b> file from the GitHub repository.</li>
+<li>Make sure you have the <b>Node.js</b> environment installed on your computer.</li>
+<li>Run the server in the terminal using the command:
 <pre><code>node server.js</code></pre>
-<i>(Możesz też użyć własnego portu, np. <code>PORT=4000 node server.js</code>)</i></li>
-<li>Serwer wskaże Twoje lokalne adresy IP (w tej samej sieci Wi-Fi), pod którymi gracze mogą łączyć się ze swoim <b>Local Hostem</b> i wspólnie grać w trybie multiplayer!</li>
+<i>(You can also use a custom port, e.g., <code>PORT=4000 node server.js</code>)</i></li>
+<li>The server will indicate your local IP addresses (on the same Wi-Fi network) where players can connect to their <b>Local Host</b> and play together in multiplayer mode!</li>
 </ol>
 
-<h2 id="tech">Aspekty techniczne</h2>
+<h2 id="tech">Technical Aspects</h2>
 <ul>
-<li>Ruch w grze jest liczony na klatkę, a nie na czas, więc szybkość gry zależy od stabilności ok. 60 FPS.</li>
-<li>Komunikacja sieciowa bazuje na protokole TCP (JSON na linię), co gwarantuje pełną kompatybilność z wiekowym stosem sieciowym iOS 6 (CFStream).</li>
-<li>Detekcja dźwięku korzysta z biblioteki <code>AVFoundation</code> i analizuje średnią moc dźwięku w decybelach.</li>
-<li><b>Rekord</b> („BEST”), ilość zdobytych cukierków oraz obecnie wybrany skin są zapisywane na stałe w pamięci urządzenia (<code>NSUserDefaults</code>).</li>
+<li>Movement in the game is calculated per frame rather than time, so the game speed depends on the stability of approx. 60 FPS.</li>
+<li>Network communication is based on the TCP protocol (JSON per line), which guarantees full compatibility with the aging iOS 6 networking stack (CFStream).</li>
+<li>Sound detection uses the <code>AVFoundation</code> library and analyzes the average sound power in decibels.</li>
+<li>The <b>High Score</b> ("BEST"), the amount of candies collected, and the currently selected skin are permanently saved in the device's storage (<code>NSUserDefaults</code>).</li>
 </ul>
 
 </main>
-<footer>© 2026 Flappy Potato. Wszelkie prawa do gry zastrzeżone. Portal oficjalny.</footer>
+<footer>© 2026 Flappy Potato. All rights reserved. Official portal.</footer>
 </body>
 </html>
