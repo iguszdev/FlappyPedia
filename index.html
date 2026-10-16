@@ -3,132 +3,184 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Flappy Potato</title>
+<title>Flappy Potato – Official Game Portal</title>
+<meta name="description" content="Flappy Potato: a Flappy Bird-style arcade game for iOS 6 with voice control, skins and local multiplayer.">
 <meta name="google-site-verification" content="EG1OhRL7cQ0kITZDxoesOhcilqRmC8DNUwYA3dm3zVk">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🥔</text></svg>">
 <style>
-:root{--bg:#fff;--fg:#202122;--mut:#54595d;--link:#0645ad;--line:#a2a9b1;--box:#f8f9fa;--head:#eaecf0;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#101418;--fg:#eaecf0;--mut:#a2a9b1;--link:#6b9eff;--line:#3a4048;--box:#1a1f25;--head:#27303a}}
-:root[data-theme="dark"]{--bg:#101418;--fg:#eaecf0;--mut:#a2a9b1;--link:#6b9eff;--line:#3a4048;--box:#1a1f25;--head:#27303a}
-html{scroll-padding-top:env(safe-area-inset-top,0px)}
-body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif}
-.top{border-bottom:1px solid var(--line);padding:10px 16px;font-family:Georgia,"Linux Libertine",serif;font-size:20px; font-weight:bold; color: #ff9800;}
-.top small{color:var(--mut);font-size:12px;font-family:system-ui,sans-serif;margin-left:8px; font-weight:normal;}
-main{max-width:980px;margin:0 auto;padding:16px}
-h1{font:400 28px Georgia,"Linux Libertine",serif;border-bottom:1px solid var(--line);margin:0 0 4px}
-h2{font:400 22px Georgia,"Linux Libertine",serif;border-bottom:1px solid var(--line);margin:28px 0 8px}
-h3{font-size:16px;margin:18px 0 4px}
-a{color:var(--link);text-decoration:none}
+:root{--bg:#fff;--page:#f6f6f6;--fg:#202122;--mut:#54595d;--link:#0645ad;--visited:#0b0080;--line:#a2a9b1;--box:#f8f9fa;--head:#eaecf0;--acc:#ff9800;--acc2:#ff5722;--hit:#fff7e6;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#101418;--page:#0b0e11;--fg:#eaecf0;--mut:#a2a9b1;--link:#6b9eff;--visited:#a58bff;--line:#3a4048;--box:#1a1f25;--head:#27303a;--hit:#2a2115}}
+:root[data-theme="dark"]{--bg:#101418;--page:#0b0e11;--fg:#eaecf0;--mut:#a2a9b1;--link:#6b9eff;--visited:#a58bff;--line:#3a4048;--box:#1a1f25;--head:#27303a;--hit:#2a2115}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:12px}
+body{margin:0;background:var(--page);color:var(--fg);font:15px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif}
+a{color:var(--link);text-decoration:none}a:hover{text-decoration:underline}a:visited{color:var(--visited)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--link);outline-offset:2px}
+.top{background:var(--bg);border-bottom:3px solid var(--acc);padding:10px 16px;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.top b{font:700 22px Georgia,"Linux Libertine",serif;color:var(--acc)}
+.top small{color:var(--mut);font-size:12px}
+.top nav{margin-left:auto;font-size:13px;display:flex;gap:14px;flex-wrap:wrap}
+main{max-width:1000px;margin:0 auto;background:var(--bg);border:1px solid var(--line);border-top:0;padding:16px 24px 24px}
+h1{font:400 30px Georgia,"Linux Libertine",serif;border-bottom:1px solid var(--line);margin:0 0 4px;padding-bottom:2px}
+h2{font:400 23px Georgia,"Linux Libertine",serif;border-bottom:1px solid var(--line);margin:30px 0 10px;padding-bottom:2px}
+h3{font-size:16px;margin:20px 0 4px}
 .sub{color:var(--mut);font-size:13px;margin-bottom:12px}
-.info{float:right;width:280px;margin:0 0 16px 20px;border:1px solid var(--line);background:var(--box);font-size:13px;border-collapse:collapse}
+.hat{font-style:italic;padding-left:1.6em;margin:0 0 12px;color:var(--mut);font-size:14px}
+.info{float:right;width:290px;margin:0 0 16px 22px;border:1px solid var(--line);background:var(--box);font-size:13px;border-collapse:collapse}
 .info th,.info td{padding:5px 8px;vertical-align:top;text-align:left}
-.info caption{background:#ff5722;color:#fff;font-weight:700;padding:8px;font-size:15px}
-.info .emo{font-size:64px;text-align:center;padding:12px}
+.info tr+tr>*{border-top:1px solid var(--head)}
+.info caption{background:var(--acc2);color:#fff;font-weight:700;padding:8px;font-size:15px}
+.info .emo{font-size:64px;text-align:center;padding:12px;line-height:1.1}
 .info th{width:38%}
-.toc{display:inline-block;border:1px solid var(--line);background:var(--box);padding:8px 16px;font-size:13px;margin:8px 0}
-.toc ol{margin:4px 0;padding-left:20px}
+.toc{display:inline-block;border:1px solid var(--line);background:var(--box);padding:8px 18px 8px 14px;font-size:13px;margin:8px 0}
+.toc ol{margin:4px 0;padding-left:22px}
+.toc summary{font-weight:700;cursor:pointer}
+.thumb{float:right;clear:right;width:220px;margin:6px 0 14px 22px;border:1px solid var(--line);background:var(--box);padding:4px;font-size:12px;color:var(--mut)}
+.thumb.l{float:left;margin:6px 22px 14px 0;clear:left}
+.thumb button{display:block;width:100%;padding:0;border:1px solid var(--line);background:var(--head);cursor:zoom-in}
+.thumb img{display:block;width:100%;height:auto;min-height:120px}
+.thumb figcaption{padding:5px 4px 2px}
 .wrap{overflow-x:auto}
-table.w{border-collapse:collapse;margin:8px 0;min-width:100%}
-table.w th,table.w td{border:1px solid var(--line);padding:5px 10px;text-align:left}
+table.w{border-collapse:collapse;margin:10px 0;width:100%}
+table.w th,table.w td{border:1px solid var(--line);padding:6px 10px;text-align:left;vertical-align:top}
 table.w th{background:var(--head)}
-code{background:var(--box);border:1px solid var(--line);padding:0 4px;border-radius:3px;font-size:13px}
-.note{background:var(--box);border-left:4px solid #ff9800;padding:8px 12px;margin:12px 0;font-size:14px}
-.discord-note{background:#5865F2; color:#fff; padding:12px 16px; border-radius:6px; margin:16px 0; font-size:14px; font-weight:bold;}
-.discord-note a{color:#fff; text-decoration:underline;}
-.halloween-note{background:#2a1b15; border-left:4px solid #ff5722; color: #fff; padding:8px 12px; margin:12px 0; font-size:14px;}
-.game-screenshot{max-width:100%; height:auto; border:1px solid var(--line); border-radius:6px; margin:12px 0; display:block;}
-footer{border-top:1px solid var(--line);color:var(--mut);font-size:12px;padding:12px 16px;margin-top:30px; text-align:center;}
-@media(max-width:640px){.info{float:none;width:100%;margin:0 0 16px}}
+code{background:var(--box);border:1px solid var(--line);padding:0 5px;border-radius:3px;font:13px ui-monospace,Menlo,Consolas,monospace}
+.cmd{display:flex;align-items:center;gap:10px;background:var(--box);border:1px solid var(--line);padding:8px 10px;margin:8px 0;overflow-x:auto}
+.cmd code{flex:1;border:0;background:none;white-space:nowrap;font-size:14px}
+.cmd button{font:13px system-ui,sans-serif;background:var(--head);color:var(--fg);border:1px solid var(--line);padding:3px 10px;cursor:pointer}
+.note{background:var(--box);border:1px solid var(--line);border-left:4px solid var(--acc);padding:8px 12px;margin:14px 0;font-size:14px;clear:both}
+.note.red{border-left-color:#d33}
+.halloween-note{background:#2a1b15;border-left:4px solid var(--acc2);color:#fff;padding:8px 12px;margin:12px 0;font-size:14px}
+.halloween-note a{color:#ffb74d}
+.discord-note{background:#5865F2;color:#fff;padding:12px 16px;border-radius:4px;margin:16px 0;font-weight:700;clear:both}
+.discord-note a{color:#fff;text-decoration:underline}
+.ref{font-size:13px;vertical-align:super;line-height:0}
+ol.refs{font-size:13px;color:var(--mut)}
+footer{max-width:1000px;margin:0 auto;color:var(--mut);font-size:12px;padding:14px 16px 24px;text-align:center}
+#lb{position:fixed;inset:0;background:rgba(0,0,0,.88);display:none;align-items:center;justify-content:center;z-index:50;padding:20px;cursor:zoom-out}
+#lb.on{display:flex}#lb img{max-width:100%;max-height:100%;border:4px solid #fff}
+@media(max-width:700px){main{padding:12px}.info,.thumb,.thumb.l{float:none;width:100%;margin:0 0 16px}.thumb img{max-width:340px;margin:0 auto}}
 </style>
 </head>
 <body>
-<div class="top">Flappy Potato<small>Official Game Portal</small></div>
+<div class="top"><b>Flappy Potato</b><small>Official Game Portal</small>
+<nav><a href="#roz">Gameplay</a><a href="#halloween">Halloween</a><a href="#ios">Installation</a><a href="#community">Discord</a><a href="#tech">Technical</a></nav></div>
 <main>
 <h1>Flappy Potato</h1>
-<div class="sub">Knowledge Base & Installation Instructions</div>
+<div class="sub">Knowledge Base &amp; Installation Instructions</div>
+<div class="hat">This article is about the iOS 6 arcade game. For community servers, see <a href="#community">Community &amp; Discord</a>.</div>
 
 <table class="info">
 <caption>Flappy Potato (Halloween Edition 🎃)</caption>
 <tr><td colspan="2" class="emo">🥔👻</td></tr>
 <tr><th>Genre</th><td>Arcade, endless runner</td></tr>
-<tr><th>Version</th><td>1.4 - Spooky & Local Host Update</td></tr>
+<tr><th>Version</th><td>1.4 – Spooky &amp; Local Host Update</td></tr>
 <tr><th>Platforms</th><td>iOS 6</td></tr>
-<tr><th>Programming Language</th><td>Objective-C / Node.js</td></tr>
+<tr><th>Language</th><td>Objective-C / Node.js</td></tr>
+<tr><th>Modes</th><td>Single player, local multiplayer</td></tr>
 <tr><th>Controls</th><td>Touch / Voice (microphone) 🗣️</td></tr>
-<tr><th>Community</th><td><a href="https://discord.gg/k5aXaS94cq" target="_blank">Discord Server</a></td></tr>
+<tr><th>Download</th><td><a href="https://github.com/iguszdev/ALLFLAPPYZIEMNIAKS/releases/tag/FZ1%2C4" target="_blank" rel="noopener">FZ1,4.ipa</a></td></tr>
+<tr><th>Community</th><td><a href="https://discord.gg/k5aXaS94cq" target="_blank" rel="noopener">Discord server</a></td></tr>
 </table>
 
-<p><b>Flappy Potato</b> is an arcade game inspired by <i>Flappy Bird</i>, where the player controls a potato flying between obstacles. The game was built in its classic form for iOS 6. The dark <b>Halloween Update</b> is currently active, adding multiplayer support with an option to run your own local host server in the new version!</p>
+<p><b>Flappy Potato</b> is an arcade game inspired by <i>Flappy Bird</i>, in which the player controls a potato flying between obstacles. The game was built in its classic form for iOS 6. The dark <b>Halloween Update</b> is currently active and adds multiplayer support, with an option to run your own local host server.</p>
 
-<div class="toc"><b>Table of Contents</b>
+<details class="toc" open><summary>Contents</summary>
 <ol>
 <li><a href="#roz">Gameplay</a></li>
-<li><a href="#halloween">Halloween Update 🎃 - What's New?</a></li>
-<li><a href="#ios">Installation (GitHub: FZ1,4.ipa & server.js)</a></li>
-<li><a href="#community">Community & Discord</a></li>
-<li><a href="#tech">Technical Aspects</a></li>
-</ol></div>
+<li><a href="#halloween">Halloween Update 🎃 – What's new?</a></li>
+<li><a href="#skins">Skins</a></li>
+<li><a href="#ios">Installation (GitHub: FZ1,4.ipa &amp; server.js)</a></li>
+<li><a href="#community">Community &amp; Discord</a></li>
+<li><a href="#tech">Technical aspects</a></li>
+<li><a href="#refs">References</a></li>
+</ol></details>
 
 <h2 id="roz">Gameplay</h2>
-<p>The player taps the screen (or uses their voice!) to give the potato upward momentum; otherwise, the character falls due to gravity. The goal is to fly through the gaps between pairs of obstacles without colliding with them, the ground, or the edge of the screen. For each obstacle passed, the player receives one point. A collision ends the game.</p>
+<figure class="thumb"><button type="button"><img src="img1.png" alt="Flappy Potato gameplay screenshot 1" loading="lazy"></button><figcaption>The potato flying between pipes.</figcaption></figure>
+<p>The player taps the screen (or uses their voice) to give the potato upward momentum; otherwise the character falls due to gravity. The goal is to fly through the gaps between pairs of obstacles without colliding with them, the ground, or the edge of the screen. The player receives one point for each obstacle passed. A collision ends the game.</p>
+<p>The best score is shown as <b>BEST</b> on the menu screen and is kept between sessions.<a class="ref" href="#refs">[1]</a></p>
 
-<img src="img1.png" alt="Flappy Potato Gameplay Screenshot 1" class="game-screenshot">
-
-<h2 id="halloween">Halloween Update 🎃 - What's New?</h2>
-<div class="halloween-note">
-<b>Halloween event is live!</b> Gameplay changes apply throughout October.
-</div>
-<p>For the spirit of Halloween, the game received a dark and atmospheric update introducing plenty of new features:</p>
+<h2 id="halloween">Halloween Update 🎃 – What's new?</h2>
+<div class="halloween-note"><b>Halloween event is live!</b> Gameplay changes apply throughout October.</div>
+<figure class="thumb"><button type="button"><img src="img2.png" alt="Flappy Potato gameplay screenshot 2" loading="lazy"></button><figcaption>The Halloween theme with the dark trail effect.</figcaption></figure>
+<p>For the spirit of Halloween, the game received a dark and atmospheric update:</p>
 <ul>
-<li><b>Scream to Fly (Voice Control) 🗣️:</b> A brand new, innovative game mode has been added! Using the button in the menu, you can switch controls from touch to voice. Scream into the microphone to make the potato jump – the louder the sound, the higher it flies!</li>
-<li><b>Candies and Character Shop 🍬:</b> Candies randomly appear during flight. Collect them to accumulate currency! For 15 candies, you can randomly unlock a new look for your potato in the shop.</li>
-<li><b>Dark Skins:</b> Replace the classic base pumpkin and unlock the <b>Ghost (👻)</b> or <b>Zombie (🧟)</b> skin with a characteristic scar.</li>
-<li><b>Spooky Visual Effects:</b> The potato now leaves a fading, dark trail effect behind it during flight. The clear sky has been replaced with purple-navy gloom, and instead of ordinary clouds, bats, ghosts, and spiderwebs fly across the sky (🦇, 👻, 🕸️).</li>
-<li><b>New Obstacles:</b> Pipes have gained a dark, gray-orange color scheme fitting the atmosphere.</li>
+<li><b>Scream to Fly (voice control) 🗣️:</b> Using the button in the menu, you can switch controls from touch to voice. Scream into the microphone to make the potato jump – the louder the sound, the higher it flies.</li>
+<li><b>Candies and character shop 🍬:</b> Candies appear randomly during flight. Collect them to earn currency. For 15 candies you can randomly unlock a new look for your potato.</li>
+<li><b>Dark skins:</b> Replace the classic base pumpkin with the <b>Ghost (👻)</b> or the <b>Zombie (🧟)</b> with a characteristic scar.</li>
+<li><b>Spooky visual effects:</b> The potato leaves a fading dark trail in flight. The clear sky is now purple-navy gloom, and bats, ghosts and spiderwebs (🦇, 👻, 🕸️) drift across it instead of clouds.</li>
+<li><b>New obstacles:</b> Pipes have a dark gray-orange color scheme.</li>
+<li><b>Multiplayer:</b> Players on the same network can play together on a local host server (see <a href="#ios">Installation</a>).</li>
 </ul>
 
-<img src="img2.png" alt="Flappy Potato Gameplay Screenshot 2" class="game-screenshot">
+<h3 id="skins">Skins</h3>
+<div class="wrap"><table class="w">
+<tr><th>Skin</th><th>Icon</th><th>How to get it</th></tr>
+<tr><td>Pumpkin (base)</td><td>🎃</td><td>Available from the start</td></tr>
+<tr><td>Ghost</td><td>👻</td><td>Random unlock in the shop, 15 candies</td></tr>
+<tr><td>Zombie</td><td>🧟</td><td>Random unlock in the shop, 15 candies</td></tr>
+</table></div>
 
 <h2 id="ios">Installation from GitHub (PC / Linux / Mac)</h2>
-<div class="note" style="border-left-color: #f44336;">
-<b>⚠️ Important:</b> The application can be installed <b>using a Linux, Windows, or macOS computer</b>. It is not possible to download and install the file directly from a browser on an iOS device!
-</div>
+<div class="note red"><b>⚠️ Important:</b> The application can be installed <b>using a Linux, Windows, or macOS computer</b>. It is not possible to download and install the file directly from a browser on an iOS device.</div>
+<figure class="thumb"><button type="button"><img src="img3.png" alt="Flappy Potato gameplay screenshot 3" loading="lazy"></button><figcaption>Multiplayer on a local host server.</figcaption></figure>
+<p>All project files, including the latest client app <b><code>FZ1,4.ipa</code></b> and the server script <b><code>server.js</code></b>, are in the official <a href="https://github.com/iguszdev/ALLFLAPPYZIEMNIAKS/releases/tag/FZ1%2C4" target="_blank" rel="noopener"><b>GitHub</b> repository</a>.</p>
 
-<p>All project files – including the latest client app <b><code>FZ1,4.ipa</code></b> and the server script <b><code>server.js</code></b> – are located in our official <b>GitHub</b> repository.</p>
-
-<p><b>1. Installing the game on iOS 6:</b></p>
+<h3>1. Installing the game on iOS 6</h3>
 <ol>
-<li>Download the <a href="https://github.com/iguszdev/ALLFLAPPYZIEMNIAKS/releases/tag/FZ1%2C4" style="font-weight: bold;" target="_blank">FZ1,4.ipa</a> file from the GitHub repository to your computer's disk.</li>
-<li>Download and install a sideloading program on your computer (e.g., <b>Sideloadly</b> or Apple Configurator for macOS).</li>
-<li>Connect your iOS 6 iPhone / iPad / iPod to the computer using a USB cable, drag the <code>FZ1,4.ipa</code> file into the program, and click "Start" / "Install". <i>(Note: Jailbreak and the <b>AppSync</b> tweak are required for older systems).</i></li>
+<li>Download the <a href="https://github.com/iguszdev/ALLFLAPPYZIEMNIAKS/releases/tag/FZ1%2C4" target="_blank" rel="noopener"><b>FZ1,4.ipa</b></a> file to your computer's disk.</li>
+<li>Install a sideloading program on your computer (e.g. <b>Sideloadly</b>, or Apple Configurator on macOS).</li>
+<li>Connect your iOS 6 iPhone / iPad / iPod to the computer with a USB cable, drag the <code>FZ1,4.ipa</code> file into the program, and click "Start" / "Install". <i>(A jailbreak and the <b>AppSync</b> tweak are required on older systems.)</i></li>
 </ol>
 
-<p><b>2. Running your own server (Local Host / Berek):</b></p>
+<h3>2. Running your own server (local host)</h3>
 <ol>
 <li>Download the <b><code>server.js</code></b> file from the GitHub repository.</li>
-<li>Make sure you have the <b>Node.js</b> environment installed on your computer.</li>
-<li>Run the server in the terminal using the command:
-<pre><code>node server.js</code></pre>
-<i>(You can also use a custom port, e.g., <code>PORT=4000 node server.js</code>)</i></li>
-<li>The server will indicate your local IP addresses (on the same Wi-Fi network) where players can connect to their <b>Local Host</b> and play together in multiplayer mode!</li>
+<li>Make sure the <b>Node.js</b> environment is installed on your computer.</li>
+<li>Run the server in a terminal:
+<div class="cmd"><code>node server.js</code><button type="button" data-copy="node server.js">Copy</button></div>
+Or use a custom port:
+<div class="cmd"><code>PORT=4000 node server.js</code><button type="button" data-copy="PORT=4000 node server.js">Copy</button></div></li>
+<li>The server prints your local IP addresses (on the same Wi-Fi network). Players connect to one of them and play together in multiplayer mode.</li>
 </ol>
 
-<img src="img3.png" alt="Flappy Potato Gameplay Screenshot 3" class="game-screenshot">
+<h2 id="community">Community &amp; Discord</h2>
+<div class="discord-note">🎮 Join our official Discord community! <a href="https://discord.gg/k5aXaS94cq" target="_blank" rel="noopener">Click here to join the server</a></div>
+<p>Connect with other players, find local servers for multiplayer, report bugs, and share your high scores on the Discord server.</p>
 
-<h2 id="community">Community & Discord</h2>
-<div class="discord-note">
-🎮 Join our official Discord community! <a href="https://discord.gg/k5aXaS94cq" target="_blank">Click here to join the server</a>
-</div>
-<p>Connect with other players, find local servers to play multiplayer, report bugs, and share your high scores on our Discord server.</p>
-
-<h2 id="tech">Technical Aspects</h2>
+<h2 id="tech">Technical aspects</h2>
 <ul>
-<li>Movement in the game is calculated per frame rather than time, so the game speed depends on the stability of approx. 60 FPS.</li>
-<li>Network communication is based on the TCP protocol (JSON per line), which guarantees full compatibility with the aging iOS 6 networking stack (CFStream).</li>
+<li>Movement is calculated per frame rather than per unit of time, so game speed depends on a stable 60 FPS.</li>
+<li>Network communication uses TCP (one JSON message per line), which works with the aging iOS 6 networking stack (CFStream).</li>
 <li>Sound detection uses the <code>AVFoundation</code> library and analyzes the average sound power in decibels.</li>
-<li>The <b>High Score</b> ("BEST"), the amount of candies collected, and the currently selected skin are permanently saved in the device's storage (<code>NSUserDefaults</code>).</li>
+<li>The <b>High Score</b> ("BEST"), the number of candies collected, and the selected skin are saved in the device's storage (<code>NSUserDefaults</code>).<a class="ref" href="#refs">[1]</a></li>
 </ul>
 
+<h2 id="refs">References</h2>
+<ol class="refs"><li>Flappy Potato 1.4 source and release notes, <a href="https://github.com/iguszdev/ALLFLAPPYZIEMNIAKS/releases/tag/FZ1%2C4" target="_blank" rel="noopener">GitHub</a>.</li></ol>
 </main>
 <footer>© 2026 Flappy Potato. All rights reserved. Official portal.</footer>
+
+<div id="lb" role="dialog" aria-label="Enlarged screenshot"><img alt=""></div>
+<script>
+(function(){
+var lb=document.getElementById('lb'),lbi=lb.querySelector('img');
+document.querySelectorAll('.thumb').forEach(function(f){
+  var b=f.querySelector('button'),img=f.querySelector('img');
+  img.addEventListener('error',function(){img.removeAttribute('src');img.style.minHeight='120px'});
+  b.addEventListener('click',function(){if(!img.getAttribute('src'))return;lbi.src=img.src;lbi.alt=img.alt;lb.classList.add('on')});
+});
+lb.addEventListener('click',function(){lb.classList.remove('on')});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')lb.classList.remove('on')});
+document.querySelectorAll('[data-copy]').forEach(function(b){
+  b.addEventListener('click',function(){
+    function done(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy'},1500)}
+    if(navigator.clipboard){navigator.clipboard.writeText(b.getAttribute('data-copy')).then(done,function(){})}
+  });
+});
+})();
+</script>
 </body>
 </html>
