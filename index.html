@@ -169,7 +169,15 @@ Or use a custom port:
 var lb=document.getElementById('lb'),lbi=lb.querySelector('img');
 document.querySelectorAll('.thumb').forEach(function(f){
   var b=f.querySelector('button'),img=f.querySelector('img');
-  img.addEventListener('error',function(){img.removeAttribute('src');img.style.minHeight='120px'});
+  var base=img.getAttribute('src').replace(/\.png$/i,''),exts=['.PNG','.jpg','.jpeg','.webp'],i=0,first=img.src;
+  img.addEventListener('error',function(){
+    if(i<exts.length){img.src=base+exts[i++];return}
+    img.removeAttribute('src');
+    var m=document.createElement('div');
+    m.style.cssText='padding:14px 8px;font-size:12px;word-break:break-all;color:#d33';
+    m.textContent='Image not found. The browser looked for: '+first;
+    img.replaceWith(m);
+  });
   b.addEventListener('click',function(){if(!img.getAttribute('src'))return;lbi.src=img.src;lbi.alt=img.alt;lb.classList.add('on')});
 });
 lb.addEventListener('click',function(){lb.classList.remove('on')});
