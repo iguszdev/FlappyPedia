@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Flappy Potato – Official Game Portal</title>
-<meta name="description" content="Flappy Potato: a Flappy Bird-style arcade game for iOS 6 with voice control, skins and local multiplayer.">
+<title>Flappy Potato 2.0 – Official Game Portal</title>
+<meta name="description" content="Flappy Potato 2.0: a Flappy Bird-style arcade game for iOS 6 with 14 hand-drawn skins, voice control and online Tag multiplayer with private rooms.">
 <meta name="google-site-verification" content="EG1OhRL7cQ0kITZDxoesOhcilqRmC8DNUwYA3dm3zVk">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🥔</text></svg>">
 <style>
@@ -53,6 +53,7 @@ code{background:var(--box);border:1px solid var(--line);padding:0 5px;border-rad
 .note.red{border-left-color:#d33}
 .halloween-note{background:#2a1b15;border-left:4px solid var(--acc2);color:#fff;padding:8px 12px;margin:12px 0;font-size:14px}
 .halloween-note a{color:#ffb74d}
+.new-note{background:var(--hit);border:1px solid var(--line);border-left:4px solid var(--acc2);padding:8px 12px;margin:12px 0;font-size:14px;clear:both}
 .discord-note{background:#5865F2;color:#fff;padding:12px 16px;border-radius:4px;margin:16px 0;font-weight:700;clear:both}
 .discord-note a{color:#fff;text-decoration:underline}
 .ref{font-size:13px;vertical-align:super;line-height:0}
@@ -65,33 +66,36 @@ footer{max-width:1000px;margin:0 auto;color:var(--mut);font-size:12px;padding:14
 </head>
 <body>
 <div class="top"><b>Flappy Potato</b><small>Official Game Portal</small>
-<nav><a href="#roz">Gameplay</a><a href="#halloween">Halloween</a><a href="#ios">Installation</a><a href="#community">Discord</a><a href="#tech">Technical</a></nav></div>
+<nav><a href="#roz">Gameplay</a><a href="#new">What’s new</a><a href="#skins">Skins</a><a href="#online">Online</a><a href="#ios">Installation</a><a href="#community">Discord</a><a href="#tech">Technical</a></nav></div>
 <main>
 <h1>Flappy Potato</h1>
-<div class="sub">Knowledge Base &amp; Installation Instructions</div>
+<div class="sub">Knowledge Base &amp; Installation Instructions · Version 2.0</div>
 <div class="hat">This article is about the iOS 6 arcade game. For community servers, see <a href="#community">Community &amp; Discord</a>.</div>
 
 <table class="info">
-<caption>Flappy Potato (Halloween Edition 🎃)</caption>
-<tr><td colspan="2" class="emo">🥔👻</td></tr>
+<caption>Flappy Potato 2.0 (Skins &amp; Online Update)</caption>
+<tr><td colspan="2" class="emo">🥔🧟</td></tr>
 <tr><th>Genre</th><td>Arcade, endless runner</td></tr>
-<tr><th>Version</th><td>1.4 – Spooky &amp; Local Host Update</td></tr>
+<tr><th>Version</th><td>2.0 – Skins &amp; Online Update</td></tr>
 <tr><th>Platforms</th><td>iOS 6</td></tr>
 <tr><th>Language</th><td>Objective-C / Node.js</td></tr>
-<tr><th>Modes</th><td>Single player, local multiplayer</td></tr>
-<tr><th>Controls</th><td>Touch / Voice (microphone) 🗣️</td></tr>
-<tr><th>Download</th><td><a href="https://github.com/iguszdev/ALLFLAPPYZIEMNIAKS/releases/tag/FZ1%2C4" target="_blank" rel="noopener">FZ1,4.ipa</a></td></tr>
+<tr><th>Modes</th><td>Single player, online Tag multiplayer (2–4 players, private rooms)</td></tr>
+<tr><th>Controls</th><td>Touch / Voice (microphone, offline) 🗣️</td></tr>
+<tr><th>Skins</th><td>14 hand-drawn skins</td></tr>
+<tr><th>Download</th><td><a href="https://github.com/iguszdev/ALLFLAPPYZIEMNIAKS/releases/tag/FZ2%2C0" target="_blank" rel="noopener">FZ2,0.ipa</a></td></tr>
 <tr><th>Community</th><td><a href="https://discord.gg/k5aXaS94cq" target="_blank" rel="noopener">Discord server</a></td></tr>
 </table>
 
-<p><b>Flappy Potato</b> is an arcade game inspired by <i>Flappy Bird</i>, in which the player controls a potato flying between obstacles. The game was built in its classic form for iOS 6. The dark <b>Halloween Update</b> is currently active and adds multiplayer support, with an option to run your own local host server.</p>
+<p><b>Flappy Potato</b> is an arcade game inspired by <i>Flappy Bird</i>, in which the player controls a potato flying between obstacles. The game is built for iOS 6. Version <b>2.0</b> is the biggest update so far: all skins were redrawn from scratch (including a proper <b>Zombie</b>), the shop was rebuilt, and the online Tag mode got private rooms, power-ups and many quality-of-life improvements.</p>
 
 <details class="toc" open><summary>Contents</summary>
 <ol>
 <li><a href="#roz">Gameplay</a></li>
-<li><a href="#halloween">Halloween Update 🎃 – What's new?</a></li>
-<li><a href="#skins">Skins</a></li>
-<li><a href="#ios">Installation (GitHub: FZ1,4.ipa &amp; server.js)</a></li>
+<li><a href="#new">Update 2.0 – What’s new?</a></li>
+<li><a href="#skins">Skins &amp; shop</a></li>
+<li><a href="#events">Seasonal events</a></li>
+<li><a href="#online">Online Tag mode</a></li>
+<li><a href="#ios">Installation (GitHub: FZ2,0.ipa &amp; server.js)</a></li>
 <li><a href="#community">Community &amp; Discord</a></li>
 <li><a href="#tech">Technical aspects</a></li>
 <li><a href="#refs">References</a></li>
@@ -100,66 +104,123 @@ footer{max-width:1000px;margin:0 auto;color:var(--mut);font-size:12px;padding:14
 <h2 id="roz">Gameplay</h2>
 <figure class="thumb"><button type="button"><img src="img1.png" alt="Flappy Potato gameplay screenshot 1" loading="lazy"></button><figcaption>The potato flying between pipes.</figcaption></figure>
 <p>The player taps the screen (or uses their voice) to give the potato upward momentum; otherwise the character falls due to gravity. The goal is to fly through the gaps between pairs of obstacles without colliding with them, the ground, or the edge of the screen. The player receives one point for each obstacle passed. A collision ends the game.</p>
+<p>Since 2.0 the game <b>gets harder as you score</b>: the pipes move faster and the gap between them slowly narrows. When a run ends you see your score, your best result and a medal – <b>Bronze</b> (10 points), <b>Silver</b> (20), <b>Gold</b> (30) or <b>Platinum</b> (50). If the app goes to the background, the game pauses automatically.</p>
 <p>The best score is shown as <b>BEST</b> on the menu screen and is kept between sessions.<a class="ref" href="#refs">[1]</a></p>
 
-<h2 id="halloween">Halloween Update 🎃 – What's new?</h2>
-<div class="halloween-note"><b>Halloween event is live!</b> Gameplay changes apply throughout October.</div>
-<figure class="thumb"><button type="button"><img src="img2.png" alt="Flappy Potato gameplay screenshot 2" loading="lazy"></button><figcaption>The Halloween theme with the dark trail effect.</figcaption></figure>
-<p>For the spirit of Halloween, the game received a dark and atmospheric update:</p>
+<h2 id="new">Update 2.0 – What’s new?</h2>
+<div class="new-note"><b>Version 2.0 is out!</b> Existing players see a “What’s new” window on the first launch. Skins bought in 1.x are refunded as currency, so you can spend it in the new shop.</div>
+<figure class="thumb"><button type="button"><img src="img2.png" alt="Flappy Potato gameplay screenshot 2" loading="lazy"></button><figcaption>The seasonal theme with an event skin.</figcaption></figure>
 <ul>
-<li><b>Scream to Fly (voice control) 🗣️:</b> Using the button in the menu, you can switch controls from touch to voice. Scream into the microphone to make the potato jump – the louder the sound, the higher it flies.</li>
-<li><b>Candies and character shop 🍬:</b> Candies appear randomly during flight. Collect them to earn currency. For 15 candies you can randomly unlock a new look for your potato.</li>
-<li><b>Dark skins:</b> Replace the classic base pumpkin with the <b>Ghost (👻)</b> or the <b>Zombie (🧟)</b> with a characteristic scar.</li>
-<li><b>Spooky visual effects:</b> The potato leaves a fading dark trail in flight. The clear sky is now purple-navy gloom, and bats, ghosts and spiderwebs (🦇, 👻, 🕸️) drift across it instead of clouds.</li>
-<li><b>New obstacles:</b> Pipes have a dark gray-orange color scheme.</li>
-<li><b>Multiplayer:</b> Players on the same network can play together on a local host server (see <a href="#ios">Installation</a>).</li>
+<li><b>14 hand-drawn skins 🎨:</b> every skin is drawn in code (no image files) with shading, faces and accessories. See <a href="#skins">Skins &amp; shop</a>.</li>
+<li><b>New shop with live previews 🏪:</b> scroll through all skins, see exactly how they look, and buy or equip them with one tap. Bought skins are yours forever.</li>
+<li><b>Online upgrades 🌍:</b> private room codes, shield power-ups, ping display, a lobby with the player list, a win counter, a warning when the tagger is close, and smoother movement. See <a href="#online">Online Tag mode</a>.</li>
+<li><b>Better game feel:</b> increasing speed, a narrowing gap, scrolling ground, a score “pop” animation, medals and auto-pause.</li>
+<li><b>Time-based physics:</b> the game plays the same on slower devices, and in online mode the pipes stay in sync for everyone.</li>
+<li><b>Voice control 🎤:</b> still available – switch from touch to voice in the menu and scream to fly (offline mode only).</li>
 </ul>
 
-<h3 id="skins">Skins</h3>
 <div class="wrap"><table class="w">
-<tr><th>Skin</th><th>Icon</th><th>How to get it</th></tr>
-<tr><td>Pumpkin (base)</td><td>🎃</td><td>Available from the start</td></tr>
-<tr><td>Ghost</td><td>👻</td><td>Random unlock in the shop, 15 candies</td></tr>
-<tr><td>Zombie</td><td>🧟</td><td>Random unlock in the shop, 15 candies</td></tr>
+<tr><th>Area</th><th>1.4 (Halloween)</th><th>2.0</th></tr>
+<tr><td>Skins</td><td>3 (Pumpkin, Ghost, Zombie), random unlock</td><td>14 hand-drawn skins, buy exactly the one you want</td></tr>
+<tr><td>Shop</td><td>Random unlock for 15 candies</td><td>Scrollable shop with previews and fixed prices</td></tr>
+<tr><td>Multiplayer</td><td>Local host server</td><td>Rooms, shields, ping, wins, lobby, anti-cheat checks</td></tr>
+<tr><td>Difficulty</td><td>Constant</td><td>Speeds up and the gap narrows</td></tr>
+<tr><td>Physics</td><td>Per frame</td><td>Time-based</td></tr>
 </table></div>
+
+<h2 id="skins">Skins &amp; shop</h2>
+<figure class="thumb"><button type="button"><img src="img3.png" alt="Flappy Potato gameplay screenshot 3" loading="lazy"></button><figcaption>Online Tag mode – the potato with the red ring is “it”.</figcaption></figure>
+<p>Skins are bought with the event currency collected during flights (💰 normally, 🍬 at Halloween, 🎁 at Christmas, 🍩 on Fat Thursday, 🍦 in summer, 🎆 on New Year). Your equipped skin is also what other players see online. Seasonal skins can only be bought while their event is running, but once bought they stay in your collection.</p>
+<div class="wrap"><table class="w">
+<tr><th>Skin</th><th>Price</th><th>Availability</th></tr>
+<tr><td>Event Potato – Classic / Pumpkin 🎃 / Santa 🎅 / Party 🎆 / Donut 🍩 / Clown 🤡 / Watermelon 🍉</td><td>Free</td><td>Changes with the calendar</td></tr>
+<tr><td>Cool Potato 😎 (sunglasses)</td><td>15</td><td>Always</td></tr>
+<tr><td>Robot 🤖</td><td>25</td><td>Always</td></tr>
+<tr><td>Ninja 🥷</td><td>30</td><td>Always</td></tr>
+<tr><td>Golden Spud 👑</td><td>60</td><td>Always</td></tr>
+<tr><td>Fire Potato 🔥</td><td>40</td><td>Always</td></tr>
+<tr><td>Ice Potato ❄️</td><td>40</td><td>Always</td></tr>
+<tr><td>Alien 👽</td><td>35</td><td>Always</td></tr>
+<tr><td>Ghost 👻</td><td>25</td><td>Halloween season</td></tr>
+<tr><td>Zombie 🧟 (exposed brain, stitches, mismatched eyes)</td><td>30</td><td>Halloween season</td></tr>
+<tr><td>Vampire 🧛 (cape, fangs, red eyes)</td><td>35</td><td>Halloween season</td></tr>
+<tr><td>Snowman ⛄</td><td>25</td><td>Christmas season</td></tr>
+<tr><td>Reindeer 🦌 (antlers, red nose)</td><td>30</td><td>Christmas season</td></tr>
+<tr><td>Elf 🧝 (pointy ears and hat)</td><td>35</td><td>Christmas season</td></tr>
+</table></div>
+
+<h3 id="events">Seasonal events</h3>
+<p>The theme (background, pipes, decorations, currency and the base skin) changes automatically with the date:</p>
+<div class="wrap"><table class="w">
+<tr><th>Event</th><th>When</th></tr>
+<tr><td>🎃 Halloween</td><td>Oct 7 – Nov 30</td></tr>
+<tr><td>🎅 Christmas</td><td>from Dec 5</td></tr>
+<tr><td>🎆 New Year</td><td>Jan 1</td></tr>
+<tr><td>🍩 Fat Thursday</td><td>Feb 11</td></tr>
+<tr><td>🤡 Prima Aprilis</td><td>Apr 1 (inverted black &amp; white)</td></tr>
+<tr><td>🍉 Summer</td><td>Jun 12 – Aug 31</td></tr>
+</table></div>
+<div class="halloween-note"><b>Halloween event is live!</b> The purple-navy night sky, dark pipes with orange outlines and the Ghost, Zombie and Vampire skins are available until the end of November. <a href="#skins">See the skins</a>.</div>
+
+<h2 id="online">Online Tag mode</h2>
+<p>Online mode is a game of <i>tag</i> for <b>2–4 players</b>. On launch choose <b>ONLINE (Tag)</b>, enter the server address, and then an optional <b>room code</b>. Everyone who enters the same code plays together; an empty code joins the public room. The server address and room are remembered.</p>
+<ul>
+<li><b>Rounds:</b> a round starts a few seconds after at least two players are in the room (sooner when it is full) and lasts <b>60 seconds</b>. Everyone flies through the <i>same</i> pipes. Players who join mid-round wait for the next one.</li>
+<li><b>Who is “it”:</b> one random player starts as “it” (👹, red ring). “It” tags someone by flying to about the same height as them; the tagged player becomes “it”, and the previous one is immune for 2 seconds.</li>
+<li><b>Goal:</b> the timer counts how long each player was “it”. The <b>lowest time wins</b>. Wins are counted per room until you leave.</li>
+<li><b>Shield power-ups 🔰:</b> they appear between the pipes. Pick one up for 3 seconds of immunity (cyan bubble).</li>
+<li><b>Crashing:</b> hitting a pipe or the ground does not end the round – you respawn after a moment and blink while invulnerable.</li>
+<li><b>Warnings:</b> when “it” gets close, the screen border pulses red, and the device vibrates when you get tagged.</li>
+<li><b>HUD:</b> seconds left in the centre, the current “it” top left, your own time as “it” top right, and the ping below the <b>Menu</b> button.</li>
+<li><b>Skins:</b> other players see your equipped skin and your name.</li>
+</ul>
 
 <h2 id="ios">Installation from GitHub (PC / Linux / Mac)</h2>
 <div class="note red"><b>⚠️ Important:</b> The application can be installed <b>using a Linux, Windows, or macOS computer</b>. It is not possible to download and install the file directly from a browser on an iOS device.</div>
-<figure class="thumb"><button type="button"><img src="img3.png" alt="Flappy Potato gameplay screenshot 3" loading="lazy"></button><figcaption>Multiplayer on a local host server.</figcaption></figure>
-<p>All project files, including the latest client app <b><code>FZ1,4.ipa</code></b> and the server script <b><code>server.js</code></b>, are in the official <a href="https://github.com/iguszdev/ALLFLAPPYZIEMNIAKS/releases/tag/FZ1%2C4" target="_blank" rel="noopener"><b>GitHub</b> repository</a>.</p>
+<p>All project files, including the latest client app <b><code>FZ2,0.ipa</code></b> and the server script <b><code>server.js</code></b>, are in the official <a href="https://github.com/iguszdev/ALLFLAPPYZIEMNIAKS/releases/tag/FZ2%2C0" target="_blank" rel="noopener"><b>GitHub</b> repository</a> (release <b>FZ2,0</b>).</p>
 
 <h3>1. Installing the game on iOS 6</h3>
 <ol>
-<li>Download the <a href="https://github.com/iguszdev/ALLFLAPPYZIEMNIAKS/releases/tag/FZ1%2C4" target="_blank" rel="noopener"><b>FZ1,4.ipa</b></a> file to your computer's disk.</li>
+<li>Download the <a href="https://github.com/iguszdev/ALLFLAPPYZIEMNIAKS/releases/tag/FZ2%2C0" target="_blank" rel="noopener"><b>FZ2,0.ipa</b></a> file to your computer's disk.</li>
 <li>Install a sideloading program on your computer (e.g. <b>Sideloadly</b>, or Apple Configurator on macOS).</li>
-<li>Connect your iOS 6 iPhone / iPad / iPod to the computer with a USB cable, drag the <code>FZ1,4.ipa</code> file into the program, and click "Start" / "Install". <i>(A jailbreak and the <b>AppSync</b> tweak are required on older systems.)</i></li>
+<li>Connect your iOS 6 iPhone / iPad / iPod to the computer with a USB cable, drag the <code>FZ2,0.ipa</code> file into the program, and click “Start” / “Install”. <i>(A jailbreak and the <b>AppSync</b> tweak are required on older systems.)</i></li>
+<li>Updating from 1.x: just install 2.0 over the old version – your best score, currency and settings are kept.</li>
 </ol>
 
 <h3>2. Running your own server (local host)</h3>
 <ol>
-<li>Download the <b><code>server.js</code></b> file from the GitHub repository.</li>
-<li>Make sure the <b>Node.js</b> environment is installed on your computer.</li>
+<li>Download the <b><code>server.js</code></b> file from the GitHub repository (it must be the 2.0 version – older servers do not support rooms and shields).</li>
+<li>Make sure <b>Node.js</b> 8 or newer is installed on your computer. No <code>npm install</code> is needed.</li>
 <li>Run the server in a terminal:
 <div class="cmd"><code>node server.js</code><button type="button" data-copy="node server.js">Copy</button></div>
 Or use a custom port:
 <div class="cmd"><code>PORT=4000 node server.js</code><button type="button" data-copy="PORT=4000 node server.js">Copy</button></div></li>
-<li>The server prints your local IP addresses (on the same Wi-Fi network). Players connect to one of them and play together in multiplayer mode.</li>
+<li>The server prints your local IP addresses (for example <code>192.168.0.10:3000</code>). Everybody on the same Wi-Fi network enters that address in the game, picks the same room code, and plays together.</li>
+<li>To play over the internet, forward the server’s TCP port on your router. The connection is not encrypted, so share the address only with people you trust.</li>
 </ol>
+
+<h3>3. Building from source (optional)</h3>
+<p>The source consists of <code>ViewController.m</code>, <code>PotatoSkinView.h</code> and <code>PotatoSkinView.m</code> (ARC, iOS 6 deployment target). Besides the default frameworks, link <b>CFNetwork</b>, <b>AudioToolbox</b>, <b>AVFoundation</b> and <b>QuartzCore</b>. The README in the repository describes the steps in detail.</p>
 
 <h2 id="community">Community &amp; Discord</h2>
 <div class="discord-note">🎮 Join our official Discord community! <a href="https://discord.gg/k5aXaS94cq" target="_blank" rel="noopener">Click here to join the server</a></div>
-<p>Connect with other players, find local servers for multiplayer, report bugs, and share your high scores on the Discord server.</p>
+<p>Connect with other players, find servers and room codes for multiplayer, report bugs, and share your high scores and favourite skins on the Discord server.</p>
 
 <h2 id="tech">Technical aspects</h2>
 <ul>
-<li>Movement is calculated per frame rather than per unit of time, so game speed depends on a stable 60 FPS.</li>
-<li>Network communication uses TCP (one JSON message per line), which works with the aging iOS 6 networking stack (CFStream).</li>
-<li>Sound detection uses the <code>AVFoundation</code> library and analyzes the average sound power in decibels.</li>
-<li>The <b>High Score</b> ("BEST"), the number of candies collected, and the selected skin are saved in the device's storage (<code>NSUserDefaults</code>).<a class="ref" href="#refs">[1]</a></li>
+<li>Movement is now <b>time-based</b>: the game measures the time between frames, so speed no longer depends on a stable 60 FPS. Online, pipes are spawned by distance from a shared random seed, so every player sees the same course.</li>
+<li>Network communication uses plain TCP with one JSON message per line, which works with the aging iOS 6 networking stack (CFStream). Positions are sent about 30 times per second and smoothed on the receiving side.</li>
+<li>The server (<code>server.js</code>, Node.js, no dependencies) keeps separate rooms and validates tags (who is “it”, immunity, whether the players are alive and close enough). Movement itself is still decided by each client, so the mode is not cheat-proof.</li>
+<li>All skins are drawn with Core Graphics at run time – no image assets.</li>
+<li>Sound detection (voice control) uses the <code>AVFoundation</code> library and analyzes the average sound power in decibels.</li>
+<li>The <b>High Score</b> (“BEST”), the currency, the selected skin and the list of owned skins are saved in the device’s storage (<code>NSUserDefaults</code>).<a class="ref" href="#refs">[1]</a></li>
 </ul>
 
 <h2 id="refs">References</h2>
-<ol class="refs"><li>Flappy Potato 1.4 source and release notes, <a href="https://github.com/iguszdev/ALLFLAPPYZIEMNIAKS/releases/tag/FZ1%2C4" target="_blank" rel="noopener">GitHub</a>.</li></ol>
+<ol class="refs">
+<li>Flappy Potato 2.0 source and release notes, <a href="https://github.com/iguszdev/ALLFLAPPYZIEMNIAKS/releases/tag/FZ2%2C0" target="_blank" rel="noopener">GitHub – release FZ2,0</a>.</li>
+<li>Previous version: Flappy Potato 1.4 (Halloween Edition), <a href="https://github.com/iguszdev/ALLFLAPPYZIEMNIAKS/releases/tag/FZ1%2C4" target="_blank" rel="noopener">GitHub – release FZ1,4</a>.</li>
+</ol>
 </main>
 <footer>© 2026 Flappy Potato. All rights reserved. Official portal.</footer>
 
